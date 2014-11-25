@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
+gem 'bcrypt'
 
 group :development do
   gem 'better_errors'
