@@ -13,3 +13,4 @@ SciFairbnb.Collections.Listings = Backbone.Collection.extend({
 })
 
 SciFairbnb.Collections.listings = new SciFairbnb.Collections.Listings();
+SciFairbnb.Collections.filteredListings = new SciFairbnb.Collections.Listings();
