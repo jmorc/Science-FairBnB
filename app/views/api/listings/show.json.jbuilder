@@ -1,0 +1,1 @@
+json.merge! @listing.attributes

@@ -1,0 +1,1 @@
+SciFairbnb.Views.ListingShow = Backbone.View.extend();

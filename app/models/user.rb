@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_token
   
+  has_many :listings
+  
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)
     return @user if (@user && @user.is_password?(password))

@@ -1,0 +1,1 @@
+SciFairbnb.Views.ListingsIndex = Backbone.View.extend();
