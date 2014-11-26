@@ -13,7 +13,7 @@ module Api
     end
     
     def index
-      @listings = current_user.listings
+      @listings = Listing.all
       render json: @listings
     end
     
