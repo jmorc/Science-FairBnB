@@ -18,7 +18,7 @@ module Api
     end
     
     def show
-      @listing.find(params[:id])
+      @listing = Listing.find(params[:id])
       
       if @listing.is_member?(current_user)
         render :show
