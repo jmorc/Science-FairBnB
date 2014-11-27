@@ -1,4 +1,4 @@
-SciFairbnb.Views.ListingsFilter = Backbone.CompositeView.extend({
+SciFairbnb.Views.Search = Backbone.CompositeView.extend({
   template: JST['listing/filter'],
   
   initialize: function(){
@@ -39,7 +39,9 @@ SciFairbnb.Views.ListingsFilter = Backbone.CompositeView.extend({
   render: function(){
     var view = this;
     var listingContent = this.template({ listings: this.collection }); 
+    
     var mapContent = this.mapView.render().$el;
+    debugger
     this.$el.prepend(mapContent);
     this.$el.html(listingContent);
     

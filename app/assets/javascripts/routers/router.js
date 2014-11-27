@@ -4,7 +4,7 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
   },
   
   routes: {
-    '': 'filter',
+    '': 'search',
     'listings/new': 'new',
     'listings/index' : 'index',
     'listings/:id': 'show',
@@ -48,13 +48,13 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
     
   },
 
-  filter: function() {
+  search: function() {
     SciFairbnb.Collections.listings.fetch();
-    var filteredView = new SciFairbnb.Views.ListingsFilter({
+    var searchView = new SciFairbnb.Views.Search({
       collection: SciFairbnb.Collections.listings
     }); 
     
-    this._swapView(filteredView);
+    this._swapView(searchView);
   },
   
   _swapView: function (view) {
