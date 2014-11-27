@@ -21,7 +21,20 @@
 .listing {
   background-color: #CCFFFF;
   height: 200px;
-  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+.filter-tools {
+  background-color: lightgrey;
+  height: 200px;
+  padding: 10px;
+  float: left;
+}
+
+.google-map {
+  background-color: salmon;
+  height: 500px;
   padding: 10px;
   float: left;
 }
