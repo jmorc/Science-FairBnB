@@ -4,11 +4,17 @@ SciFairbnb.Views.ListingsFilter = Backbone.CompositeView.extend({
   initialize: function(){
     this.listenTo(this.collection, "sync", this.render);
     this.collection.each(this.addListing.bind(this));
+    this.mapView = new SciFairbnb.Views.MapShow();
+  },
+  
+  addMapView: function(){
+    var mapShow = new SciFairbnb.Views.MapShow();
+    this.addSubview(".map", mapShow); 
   },
   
   addListing: function(listing){
     var listingShow = new SciFairbnb.Views.ListingShow({ model: listing })
-      this.addSubview(".listings", listingShow);
+    this.addSubview(".listings", listingShow);
   },
   
   removeListing: function(listing){
@@ -32,8 +38,12 @@ SciFairbnb.Views.ListingsFilter = Backbone.CompositeView.extend({
   
   render: function(){
     var view = this;
-    var content = this.template({ listings: this.collection })
-    this.$el.html(content)
+    var listingContent = this.template({ listings: this.collection }); 
+    var mapContent = this.mapView.render().$el;
+    this.$el.prepend(mapContent);
+    this.$el.html(listingContent);
+    
+      
     this.collection.each(this.addListing.bind(this));
     this.attachSubviews();
     

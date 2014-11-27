@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     
     if @user
       login(@user)
-      redirect_to root_url # definitely not right
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new

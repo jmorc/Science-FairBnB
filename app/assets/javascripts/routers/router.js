@@ -4,9 +4,9 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
   },
   
   routes: {
-    '': 'index',
+    '': 'filter',
     'listings/new': 'new',
-    'listings/filter' : 'filter',
+    'listings/index' : 'index',
     'listings/:id': 'show',
     'listings/:id/edit': 'edit' 
   },
