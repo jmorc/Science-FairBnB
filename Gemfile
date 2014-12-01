@@ -25,6 +25,7 @@ gem 'backbone-on-rails'
 gem 'bootstrap-sass'
 gem 'newrelic_rpm'
 gem 'bcrypt'
+gem 'geocoder'
 
 group :development do
   gem 'better_errors'

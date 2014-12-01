@@ -9,7 +9,9 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
   },
   
   addMapView: function(){
-    var mapShow = new SciFairbnb.Views.MapShow();
+    var mapShow = new SciFairbnb.Views.MapShow({
+      collection: this.collection
+    });
     this.addSubview(".google-map", mapShow); 
   },
   
