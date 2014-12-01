@@ -2,7 +2,10 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
   template: JST['search'],
   
   initialize: function(){
-    this.listenTo(this.collection, "sync", this.render);
+    // this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addListing);
+    this.listenTo(this.collection, "remove", this.removeListing);
+    // this.listenTo(this.collection, "reset", this.filterCollection);
     this.collection.each(this.addListing.bind(this));
     this.addMapView();
     this.addFilterView();
@@ -25,6 +28,13 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
     this.addSubview(".listings", listingShow);
   },
   
+  filterCollection: function(){
+    this.subviews('.listings').forEach(function(subview){
+      subview.remove();
+    });
+    this.render();
+  },
+  
   removeListing: function(listing){
     var subview = _.find(this.subviews(".listings"),
       function(subview) {
@@ -34,27 +44,13 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
     this.removeSubview(".listings", subview);
   },
   
-  filterByMaxPrice: function(price){
-    // filtering function --> begins with collection of all listings and assigns to this.collection only those lists which meet filtering criteria
-  },
-  
-  filterByMapRegion: function(input_from_maps) {
-    // filter
-  },
-  
-  filterByAttribute: function(options) {},
-  
   render: function(){
+    console.log("rendering search view")
     var view = this;
     var searchContent = this.template()
-    // var listingContent = this.template({ listings: this.collection });
-    // debugger
-    // var mapContent = this.mapView.render().$el;
-    // this.$el.prepend(mapContent);
     this.$el.html(searchContent);
+     
     
-    this.collection.each(this.addListing.bind(this));
-    // this.addMapView();
     this.attachSubviews();
     
     return this;

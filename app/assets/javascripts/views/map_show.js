@@ -25,23 +25,15 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
       this.listenTo(this.collection, "add", this.addMarker);
       
       google.maps.event.addListener(
-        this.map, "bounds_changed", this.mapFilterCollection.bind(this));
+        this.map, "bounds_changed", this.filterByLocation.bind(this));
   },
   
-  mapFilterCollection: function() {
-    console.log("Map moved!")
-    this.mapFilterCheckBounds()
-    
-    // iterate through the collection filtered, and determine which listings are on the map
-    // refresh listingsShow with this collection 
-  },
-  
-  mapFilterCheckBounds: function(){
+  filterByLocation: function(){
     var bounds = this.map.getBounds();
     var ne  = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
     
-    this.collection.filter(function(listing){
+    filteredListings = SciFairbnb.Collections.listings.filter(function(listing){
       var listingLat = listing.get("latitude");
       var listingLng = listing.get("longitude");
       if (listingLat > sw.lat() && listingLat < ne.lat() &&
@@ -53,6 +45,12 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
           return false;
         }
     });
+    
+    
+    SciFairbnb.Collections.filteredListings.set(filteredListings);
+    console.log(SciFairbnb.Collections.filteredListings);
+    // this.collection = SciFairbnb.Collections.filteredListings;
+    // this.collection.trigger('filter');
   },
   
   attributes: {
