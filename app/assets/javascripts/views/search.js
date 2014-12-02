@@ -22,7 +22,7 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
   },
   
   addListing: function(listing){
-    var listingShow = new SciFairbnb.Views.ListingShow({ model: listing })
+    var listingShow = new SciFairbnb.Views.ListingItem({ model: listing })
     this.addSubview(".listings", listingShow);
   },
   

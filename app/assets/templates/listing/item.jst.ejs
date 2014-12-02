@@ -1,0 +1,15 @@
+<div class="listing col-xs-2">
+  
+  <div class="item-view-image">
+    <img src="<%=listing.escape("image_url")%>"    
+         style="width:200px;height:200px">
+    <div class="item-view-price">
+      $<%= listing.escape("price")%>
+    </div>
+  </div>
+  
+  <h5><%= listing.escape("title")%></h5>
+  Guests: <%=listing.escape("num_guests")%> 
+  Beds: <%=listing.escape("num_beds")%> 
+   
+</div>
