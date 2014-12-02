@@ -1,8 +1,6 @@
 .listing {
-  background-color: #CCFFFF;
   height: 200px;
   padding: 0px;
-  float: left;
 }
 
 .filter-tools {
@@ -52,9 +50,9 @@
  
  .item-view-price {
    background-color: grey;
-   font-color: white;
+   color: white;
    font-weight: bold;
-   font-size: 24;
+   font-size: 18px;
    position: absolute;  
    top: 160px;
    padding-left: 15px;
@@ -62,8 +60,17 @@
    opacity: 0.5;
  }
  
+ .jumbotron.listing {
+   margin-bottom: 0px;
+   height: 550px;
+   background-size: cover;
+ }
  
- 
+ #listing-show-title {
+   font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 24px;
+   color: #565a5c;
+ }
  
  
  

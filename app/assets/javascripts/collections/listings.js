@@ -4,10 +4,17 @@ SciFairbnb.Collections.Listings = Backbone.Collection.extend({
   
   getOrFetch: function(id){
     var listing = this.get(id);
+    listings = this;
     if (!listing) {
       var listing = new SciFairbnb.Models.Listing({ id: id }) 
+      listing.fetch({ 
+        success: function(){
+          listings.add(listing);
+        }
+      });
+    } else {
+      listing.fetch();
     }
-    listing.fetch();
     return listing;
   },
   

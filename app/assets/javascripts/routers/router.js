@@ -42,7 +42,7 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
   show: function (id) {
     var listing = SciFairbnb.Collections.listings.getOrFetch(id);
     var view = new SciFairbnb.Views.ListingShow({ 
-      model: post 
+      model: listing 
     });
     this._swapView(view);
     
