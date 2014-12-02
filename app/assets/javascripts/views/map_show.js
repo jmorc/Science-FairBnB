@@ -32,35 +32,45 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
 
     this.collection.forEach(this.addMarker.bind(this));
     this.listenTo(this.collection, "add", this.addMarker);
-    // this.listenTo(this.collection, "add", this.setMarkers);
     this.listenTo(this.collection, "remove", this.setMarkers);
     
     google.maps.event.addListener(
         this.map, "bounds_changed", this.filterByLocation.bind(this));
+    
   },
   
   filterByLocation: function(){
     var bounds = this.map.getBounds();
     var ne  = bounds.getNorthEast();
     var sw = bounds.getSouthWest();
-    
-    filteredListings = SciFairbnb.Collections.listings.filter(function(listing){
+    SciFairbnb.Collections.filteredListings.filters.location = function(listing){
       var listingLat = listing.get("latitude");
       var listingLng = listing.get("longitude");
       if (listingLat > sw.lat() && listingLat < ne.lat() &&
         listingLng > sw.lng() && listingLng < ne.lng()) {
           var listingTitle = listing.get("title")
           console.log(listingTitle + " is within map boundaries")
+          
             return true;
         } else {
           return false;
         }
-    });
+    }   
+    // var filteredListings = SciFairbnb.Collections.listings.filter(function(listing){
+    //   var listingLat = listing.get("latitude");
+    //   var listingLng = listing.get("longitude");
+    //   if (listingLat > sw.lat() && listingLat < ne.lat() &&
+    //     listingLng > sw.lng() && listingLng < ne.lng()) {
+    //       var listingTitle = listing.get("title")
+    //       console.log(listingTitle + " is within map boundaries")
+    //
+    //         return true;
+    //     } else {
+    //       return false;
+    //     }
+    // });
     
-    
-    SciFairbnb.Collections.filteredListings.set(filteredListings);
-    // this.collection = SciFairbnb.Collections.filteredListings;
-    // this.collection.trigger('filter');
+    SciFairbnb.Collections.filteredListings.updateFiltered();
   },
   
   attributes: {

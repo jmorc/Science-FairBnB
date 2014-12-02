@@ -9,6 +9,21 @@ SciFairbnb.Collections.Listings = Backbone.Collection.extend({
     }
     listing.fetch();
     return listing;
+  },
+  
+  filters: {
+    price: function () { return true; },
+    location: function () { return true; }  
+  },
+  
+  updateFiltered: function () {
+    var _filteredListings = SciFairbnb.Collections.listings.clone();
+    
+    for (var filterName in this.filters) {
+      _filteredListings = _filteredListings.filter(this.filters[filterName]);
+    }
+    
+    this.set(_filteredListings);
   }
 })
 

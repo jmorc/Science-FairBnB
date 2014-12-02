@@ -3,14 +3,20 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
   
   initialize: function(){
     
+    this.initialMinMax = {
+      value: [this.sliderOptions.value[0], this.sliderOptions.value[1]]
+    }
+    
+    this.attachSlider();
+    
+    this.listenTo(SciFairbnb.Collections.listings, 'sync', this.filterByPrice.bind(this, this.initialMinMax))
   },
   
   attachSlider: function(){
-    // this.$el.append("<div class='slider'></div>");
-    // this.$el.append("")
     this.$('#price-slider').slider(this.sliderOptions);
     this.$('.slider').on('slideStop', this.handleSlider.bind(this));
-  //   this.$('.slider').prepend('<b>$0</b>');
+  
+    this.filterByPrice(this.initialMinMax);
   },
   
   handleSlider: function(event){
@@ -27,18 +33,19 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
       minPrice = maxPrice;
     }
     
-    filteredListings = SciFairbnb.Collections.listings.filter(function(listing){
+    filteredListings = SciFairbnb.Collections.listings.filters.price = function(listing){
       var listingPrice = listing.get('price');
       if (listingPrice >= minPrice && listingPrice <= maxPrice) {
-          var listingTitle = listing.get("title");
-          console.log(listingTitle + " is within price range")
-            return true;
-        } else {
-          return false;
-        }
-      });
+        var listingTitle = listing.get("title");
+        console.log(listingTitle + " is within price range")
+        return true;
+      } else {
+        return false;
+      }
+    }
       
-      SciFairbnb.Collections.filteredListings.set(filteredListings);
+    SciFairbnb.Collections.filteredListings.updateFiltered();
+  
   },
   
   render: function(){
