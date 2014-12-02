@@ -2,10 +2,8 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
   template: JST['search'],
   
   initialize: function(){
-    // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addListing);
     this.listenTo(this.collection, "remove", this.removeListing);
-    // this.listenTo(this.collection, "reset", this.filterCollection);
     this.collection.each(this.addListing.bind(this));
     this.addMapView();
     this.addFilterView();
@@ -49,10 +47,7 @@ SciFairbnb.Views.Search = Backbone.CompositeView.extend({
     var view = this;
     var searchContent = this.template()
     this.$el.html(searchContent);
-     
-    
     this.attachSubviews();
-    
     return this;
   },
   

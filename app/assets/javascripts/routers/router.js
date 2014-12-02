@@ -53,7 +53,6 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
     var searchView = new SciFairbnb.Views.Search({
       collection: SciFairbnb.Collections.filteredListings
     }); 
-    
     this._swapView(searchView);
   },
   
