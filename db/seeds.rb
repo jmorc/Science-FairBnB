@@ -12,7 +12,8 @@ listing1 = Listing.create({
                num_beds: 1,
                num_guests: 2,
                num_bedrooms: 0,
-               user_id: 2
+               user_id: 2,
+               price: 20
           })
 
 listing2 = Listing.create({
@@ -21,7 +22,8 @@ listing2 = Listing.create({
                num_beds: 4,
                num_guests: 10,
                num_bedrooms: 3,
-               user_id: 2
+               user_id: 2,
+               price: 500
           })
 
 listing3 = Listing.create({
@@ -30,7 +32,8 @@ listing3 = Listing.create({
                num_beds: 3,
                num_guests: 3,
                num_bedrooms: 3,
-               user_id: 2
+               user_id: 2,
+               price: 140
           })
 
 listing4 = Listing.create({
@@ -39,5 +42,6 @@ listing4 = Listing.create({
                num_beds: 4,
                num_guests: 5,
                num_bedrooms: 3,
-               user_id: 2
+               user_id: 2,
+               price: 200
           })
