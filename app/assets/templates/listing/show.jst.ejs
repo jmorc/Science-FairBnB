@@ -3,18 +3,70 @@
 </div>
 
 <div class='container'>
+  
+  <div class='row'>
+    <div class="price-list-show col-xs-3 col-xs-offset-8">
+      <div class="price">
+        $<%= listing.escape("price")%>
+      </div>
+      <div class="price-rate">
+        per night
+      </div>
+    </div>
+  </div>
+  
   <div class='row'>
   
     <div class="listing col-xs-1 col-xs-offset-1">
       Host UserName
     </div>
   
-    <div class="listing col-xs-4">
+    <div class="listing col-xs-6">
+      
       <div id="listing-show-title">
          <%= listing.escape("title")%>
       </div>
       
-      <h4>Price: $<%= listing.escape("price")%></h4>
-      <div>
-      </div>
-    </div>
+      <div class="details-panel">
+        <div class="details-panel-item">
+          Guests: <%= listing.escape("num_guests")%>
+        </div>
+        <div class="details-panel-item">
+          Beds: <%= listing.escape("num_beds")%>
+        </div>
+        
+        <% if (listing.get("evil") === 'Y') { %>
+          <div class="details-panel-item">Evil</div>
+        <% } else { %>
+          <div class="details-panel-item">Not Evil</div>
+        <% } %>
+      </div>      
+   </div>
+   
+   <div class="col-xs-1">
+     Check-in
+     <div class="input-append date">
+       <input type="text" class="span2"><span class="add-on"></span>
+     </div>
+   </div>
+   <div class="col-xs-1">
+     Check-out
+     <div class="input-append date">
+       <input type="text" class="span2"><span class="add-on"></span>
+     </div>
+   </div>
+   <div class="col-xs-1">
+     Guests
+     <div id="guest-number-selector">
+       <select id='num-guests'>
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+       </select>
+     </div>
+   </div>
+</div>
+
+

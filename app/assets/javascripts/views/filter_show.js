@@ -2,14 +2,12 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
   template: JST['filter/show'],
   
   initialize: function(){
-    
     this.initialMinMax = {
       value: [this.sliderOptions.value[0], this.sliderOptions.value[1]]
     }
-    
     this.attachSlider();
-    
-    this.listenTo(SciFairbnb.Collections.listings, 'sync', this.filterByPrice.bind(this, this.initialMinMax))
+    this.listenTo(SciFairbnb.Collections.listings, 
+                  'sync', this.filterByPrice.bind(this, this.initialMinMax))
   },
   
   attachSlider: function(){

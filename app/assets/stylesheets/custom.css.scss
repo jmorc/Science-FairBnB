@@ -72,5 +72,37 @@
    color: #565a5c;
  }
  
+ .details-panel-item {
+   height: 80px;
+   font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 18px;
+   color: #565a5c;
+   display: inline-block;
+   float: left;
+   margin-left: 45px;
+   margin-left: 45px;
+ }
  
+ .price-list-show {
+   background-color: rgba(60,63,64,0.9);
+   position: absolute;
+   top: -40px;
+   height: 40px;
+   color: white;
+   font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-size: 18px;
+ }
+
+.price {
+  display: inline-block;
+  float: left;
+}
+
+.price-rate {
+  display: inline-block;
+  float: right;
+}
+.span2{
+  width: 90px;
+}
  
