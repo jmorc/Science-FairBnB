@@ -10,13 +10,37 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Guest Sign In</h4>
       </div>
+      
       <div class="modal-body">
-        ...
+        <form action="/users"  method="POST" role="form">
+          <div class='form-group'>
+            <input type='hidden'
+                   name='authenticity_token'
+                   value="<%= form_authenticity_token %>">
+                   
+            <label for='user_email'>E-mail</label>
+            <input type='email'
+                   id='user_email'
+                   class='form-control'
+                   value='welcome@guest.com'
+                   name='user[email]'>
+                   
+            <label for='user_password'>Password</label>
+            <input type='password'
+                   id='user_password'
+                   class='form-control'
+                   value='password'
+                   name='user[password]'><br>
+            
+            <button class='form-control btn btn-primary'>Click for Guest Sign In</button>
+           </div>
+         </form>
       </div>
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+        <button type="button" class="btn btn-default"    
+                data-dismiss="modal">Close</button>
+      </div>  
     </div>
   </div>
 </div>
@@ -29,12 +53,37 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Sign In</h4>
       </div>
+      
       <div class="modal-body">
-        ...
+        
+        <form action="/users"  method="POST" role="form">
+          <div class='form-group'>
+            <input type='hidden'
+                   name='authenticity_token'
+                   value="<%= form_authenticity_token %>">
+                   
+            <label for='user_email'>E-mail</label>
+            <input type='email'
+                   id='user_email'
+                   class='form-control'
+                   placeholder='lets@go.com'
+                   name='user[email]'>
+                   
+            <label for='user_password'>Password</label>
+            <input type='password'
+                   id='user_password'
+                   class='form-control'
+                   placeholder='Password'
+                   name='user[password]'><br>
+                   
+            <button class='form-control btn btn-primary'>Sign In</button>
+          </div>
+        </form>
       </div>
+      
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-default"    
+                data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -49,42 +98,35 @@
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
-        ...
+        <form action="/users"  method="POST" role="form">
+          <div class='form-group'>
+            <input type='hidden'
+                   name='authenticity_token'
+                   value="<%= form_authenticity_token %>">
+                   
+            <label for='user_email'>E-mail</label>
+            <input type='email'
+                   id='user_email'
+                   class='form-control'
+                   placeholder='E-mail'
+                   name='user[email]'>
+                   
+            <label for='user_password'>Password</label>
+            <input type='password'
+                   id='user_password'
+                   class='form-control'
+                   placeholder='password'
+                   name='user[password]'><br>
+                   
+            <button 
+             class='form-control btn btn-primary btn-custom'>Sign Up</button>
+          </div>
+        </form>  
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div>
 
-<div class='row'>
-  <div class='col-xs-4 col-xs-offset-4'>
-    <form action="/session"  method="POST" role="form">
-       <h3>Sign In</h3>
-      <div class='form-group'>
-        <input type='hidden'
-               name='authenticity_token'
-               value="<%= form_authenticity_token %>">
-               
-        <label for='user_email'>E-mail</label>
-        <input type='email'
-               id='user_email'
-               class='form-control'
-               placeholder='E-mail'
-               name='user[email]'>
-               
-        <label for='user_password'>Password</label>
-        <input type='password'
-               id='user_password'
-               class='form-control'
-               placeholder='password'
-               name='user[password]'><br>
-        
-        <button class='form-control btn btn-primary'>Sign In</button>
-      
-      <div>
-    </form>
-  <div>
-</div>
