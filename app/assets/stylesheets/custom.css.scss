@@ -62,13 +62,13 @@
  
  .jumbotron.listing {
    margin-bottom: 0px;
-   height: 550px;
+   height: 450px;
    background-size: cover;
  }
  
  #listing-show-title {
    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
-   font-size: 24px;
+   font-size: 36px;
    color: #565a5c;
  }
  
@@ -96,13 +96,60 @@
 .price {
   display: inline-block;
   float: left;
+  padding-top: 10px;
 }
 
 .price-rate {
   display: inline-block;
   float: right;
+  padding-top: 10px;
 }
 .span2{
   width: 90px;
 }
- 
+
+.booking-subcontainer {
+  display: inline-block;
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.booking-container {
+  border: 1px solid black;
+  height: 120px;
+  position: absolute;
+  top: -10px;
+}
+
+.btn-primary.book-it-btn {
+  width: 200px;
+  margin-top: 15px;
+  margin-left: 28px;
+  margin-right: auto;
+  background-color: red;
+}
+
+.btn-primary.book-it-btn:hover {
+  background-color: salmon;
+}
+
+.listing-headline {
+  position: relative;
+  top: -30px;
+}
+
+.description {
+  position: relative;
+  top: -50px;
+}
+
+.new-user-jumbo {
+  margin-bottom: 0px;
+  height: 700px;
+  background-size: cover;
+}
+
+.navbar.navbar-default {
+  margin-bottom: 0px;
+}
