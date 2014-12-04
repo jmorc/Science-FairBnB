@@ -20,7 +20,8 @@ SciFairbnb.Collections.Listings = Backbone.Collection.extend({
   
   filters: {
     price: function () { return true; },
-    location: function () { return true; }  
+    location: function () { return true; },
+    mentalState: function () { return true; }  
   },
   
   updateFiltered: function () {

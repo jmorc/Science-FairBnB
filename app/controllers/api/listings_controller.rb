@@ -14,18 +14,11 @@ module Api
     
     def index
       @listings = Listing.all
-      render json: @listings
+      render :index
     end
     
     def show
       @listing = Listing.find(params[:id])
-      # render json: @listing
-      
-      # if @listing.is_member?(current_user)
-#         render :show
-#       else
-#         render json: ["user does not own this listing"], status: 403
-#       end
     end
     
     def destroy

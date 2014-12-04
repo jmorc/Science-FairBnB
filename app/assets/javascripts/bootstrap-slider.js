@@ -372,13 +372,13 @@
 
 	$.fn.slider.defaults = {
 		min: 0,
-		max: 10,
+		max: 1000,
 		step: 1,
 		orientation: 'horizontal',
-		value: 5,
+		value: [50, 950],
 		selection: 'before',
 		tooltip: 'show',
-		handle: 'round',
+		handle: 'square',
 		formater: function(value) {
 			return value;
 		}

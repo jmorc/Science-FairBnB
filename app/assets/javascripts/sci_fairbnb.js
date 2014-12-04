@@ -11,3 +11,4 @@ window.SciFairbnb = {
   }
 }; 
 
+$(SciFairbnb.initialize);

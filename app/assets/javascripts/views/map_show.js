@@ -13,7 +13,7 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
     var position = new google.maps.LatLng(listing.get("latitude"), listing.get("longitude"));
     var marker = new google.maps.Marker({
       position: position,
-      map: this.map
+      map: this.map,
     })
     this.mapMarkers.push(marker);
   },
@@ -49,27 +49,12 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
       if (listingLat > sw.lat() && listingLat < ne.lat() &&
         listingLng > sw.lng() && listingLng < ne.lng()) {
           var listingTitle = listing.get("title")
-          console.log(listingTitle + " is within map boundaries")
-          
             return true;
         } else {
           return false;
         }
     }   
-    // var filteredListings = SciFairbnb.Collections.listings.filter(function(listing){
-    //   var listingLat = listing.get("latitude");
-    //   var listingLng = listing.get("longitude");
-    //   if (listingLat > sw.lat() && listingLat < ne.lat() &&
-    //     listingLng > sw.lng() && listingLng < ne.lng()) {
-    //       var listingTitle = listing.get("title")
-    //       console.log(listingTitle + " is within map boundaries")
-    //
-    //         return true;
-    //     } else {
-    //       return false;
-    //     }
-    // });
-    
+   
     SciFairbnb.Collections.filteredListings.updateFiltered();
   },
   
@@ -78,7 +63,6 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
   },
   
   setMarkers: function(){
-    console.log("in setMarkers")
     this.clearMarkers();
     var that = this;
     this.collection.forEach(function(listing) {

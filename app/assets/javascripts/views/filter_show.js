@@ -5,13 +5,20 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
     this.initialMinMax = {
       value: [this.sliderOptions.value[0], this.sliderOptions.value[1]]
     }
+
     this.attachSlider();
     this.listenTo(SciFairbnb.Collections.listings, 
                   'sync', this.filterByPrice.bind(this, this.initialMinMax))
+    
+  },
+  
+  events: {
+    "change #mental-state-select" : "handleSelect" 
   },
   
   attachSlider: function(){
-    this.$('#price-slider').slider(this.sliderOptions);
+     // this.sliderOptions
+    this.$('#price-slider').slider();
     this.$('.slider').on('slideStop', this.handleSlider.bind(this));
   
     this.filterByPrice(this.initialMinMax);
@@ -19,6 +26,42 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
   
   handleSlider: function(event){
     this.filterByPrice(event);
+  },
+  
+  handleSelect: function(event){
+    this.filterByMentalState(event);
+  },
+  
+  filterByMentalState: function(event){
+    var requestedMentalState = event.currentTarget.value;
+  
+    filteredListings = SciFairbnb.Collections.listings.filters.mentalState = function(listing){
+      if (requestedMentalState === "Any") { return true }
+      
+      return requestedMentalState === listing.get("user").disposition 
+      // var returnMadnessFilter = function(response) {
+//         console.log("requestedMentalState is: " + requestedMentalState)
+//         console.log("userDisposition is: " + response.user.disposition)
+//
+//         if (response.user.disposition === requestedMentalState) {
+//           return true;
+//         } else {
+//           return false;
+//         }
+//       };
+//
+//       var ajaxOptions = {
+//         url: 'api/listings/' + listing.id,
+//         dataType: 'json',
+//         success: returnMadnessFilter
+//       };
+//
+//       $.ajax(ajaxOptions);
+    }
+    
+    
+      
+    SciFairbnb.Collections.filteredListings.updateFiltered();
   },
   
   filterByPrice: function(event){
@@ -35,7 +78,6 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
       var listingPrice = listing.get('price');
       if (listingPrice >= minPrice && listingPrice <= maxPrice) {
         var listingTitle = listing.get("title");
-        console.log(listingTitle + " is within price range")
         return true;
       } else {
         return false;
@@ -55,9 +97,9 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
   
   sliderOptions: {
     min: 0,
-    max: 2000,
+    max: 1000,
     handle: 'square',
     orientation: 'horizontal',
-    value: [50, 250]
+    value: [50, 950]
   }
 });
