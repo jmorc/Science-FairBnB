@@ -1,5 +1,5 @@
 <div class='jumbotron listing' 
-     style="background-image: url(<%=listing.escape("image_url")%>)">
+     style="background-image: url(<%=listing.escape("jumbo_image_url")%>)">
 </div>
 
 <div class='container'>
@@ -17,8 +17,18 @@
   
   <div class='row listing-headline'>
   
-    <div class="col-xs-1 col-xs-offset-1">
-      Host UserName
+    <div class="col-xs-2">
+      <% user = listing.get("user") %>
+      <% if (user) { %>
+        <img src="<%=user.image_url%>" 
+             alt="Profile Pic" 
+             class="img-circle user-img">
+        <div class='list-show-username'>     
+          <%= user.firstname %> 
+          <%= user.lastname %>
+        </div>     
+      <% }; %>
+      
     </div>
   
     <div class="col-xs-6">

@@ -18,9 +18,4 @@ SciFairbnb.Views.ListingShow = Backbone.View.extend({
     return this;
   },
   
-  datePickerOptions: {
-    
-    
-  },
-  
 });

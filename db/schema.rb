@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202195346) do
+ActiveRecord::Schema.define(version: 20141203233526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "listings", force: true do |t|
-    t.integer "user_id",       null: false
-    t.string  "title",         null: false
+    t.integer "user_id",         null: false
+    t.string  "title",           null: false
     t.string  "address"
     t.integer "num_beds"
     t.integer "num_guests"
@@ -31,12 +31,17 @@ ActiveRecord::Schema.define(version: 20141202195346) do
     t.string  "centrifuge"
     t.string  "bunsen_burner"
     t.string  "evil"
+    t.string  "jumbo_image_url"
   end
 
   create_table "users", force: true do |t|
     t.string "password_digest"
     t.string "email"
     t.string "session_token"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "image_url"
+    t.string "disposition"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

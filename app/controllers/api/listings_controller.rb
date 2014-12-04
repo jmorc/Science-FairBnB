@@ -19,7 +19,7 @@ module Api
     
     def show
       @listing = Listing.find(params[:id])
-      render json: @listing
+      # render json: @listing
       
       # if @listing.is_member?(current_user)
 #         render :show
