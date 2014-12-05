@@ -68,11 +68,17 @@
   display: inline-block;
 }
 
-.google-map {
+.col-md-5.google-map {
+  position: fixed;
   height: 500px;
   padding: 0px;
-  float: left;
 }
+
+//.google-map {
+//  height: 500px;
+//  padding: 0px;
+//  float: left;
+//}
 
 .item-view-price {
   background: rgba(54, 25, 25, .8);
