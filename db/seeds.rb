@@ -55,7 +55,7 @@ listingAugustine = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 99
+      price: 175
 })
 
 userVicanti = User.create({
@@ -80,7 +80,7 @@ listingVicanti = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 179
+      price: 130
 })
 
 
@@ -106,7 +106,7 @@ listingNiklason = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 279
+      price: 125
 })
 
 userCurie = User.create({
@@ -131,7 +131,7 @@ listingCurie = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 279
+      price: 280
 })
 
 userCavendish = User.create({
@@ -156,7 +156,7 @@ listingCavendish = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 679
+      price: 579
 })
 
 userGalileo = User.create({
@@ -181,7 +181,7 @@ listingGalileo = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 679
+      price: 149
 })
 
 userGoodall = User.create({
@@ -206,7 +206,7 @@ listingGoodall = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 679
+      price: 250
 })
 
 userCarver = User.create({
@@ -231,7 +231,7 @@ listingCarver = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Regular',
-      price: 679
+      price: 199
 })
 
 # EVIL SCIENTISTS (3)
@@ -258,7 +258,7 @@ listingEvil = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Evil',
-      price: 500
+      price: 350
 })
 
 userDog = User.create({
@@ -283,7 +283,7 @@ listingDog = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Evil',
-      price: 500
+      price: 499
 })
 
 userStrangelove = User.create({
@@ -308,7 +308,7 @@ listingStrangelove = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Evil',
-      price: 99
+      price: 139
 })
 
 # MAD SCIENTISTS (3)
@@ -335,7 +335,7 @@ listingNewton = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Mad',
-      price: 979
+      price: 559
 })
 
 userFrankenstein = User.create({
@@ -385,7 +385,7 @@ listingBunsen = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Mad',
-      price: 879
+      price: 779
 })
 #
 #

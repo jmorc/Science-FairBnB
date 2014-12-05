@@ -1,3 +1,22 @@
+@-webkit-keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);} 
+    40% {-webkit-transform: translateY(-7px);} 
+    60% {-webkit-transform: translateY(-3px);} 
+} 
+
+@keyframes bounce { 
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-7px);} 
+    60% {transform: translateY(-3px);} 
+} 
+
+.animated { 
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+} 
+
 .amenity-title {
   font-size: 16px;
   color: #565a5c;
@@ -26,15 +45,12 @@
   top: -10px;
 }
 
-.btn-primary.book-it-btn {
-  width: 200px;
-  margin-top: 15px;
-  margin-left: 28px;
-  margin-right: auto;
-  background-color: red;
+.bounce { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
 }
 
-.btn-primary.book-it-btn:hover {
+.btn.btn-primary.btn-custom:hover {
   background-color: salmon;
 }
 
@@ -49,8 +65,8 @@
   color: #565a5c;
   display: inline-block;
   float: left;
-  margin-left: 45px;
-  margin-left: 45px;
+  margin-left: 80px;
+  text-align: center;
 }
 
 .description {
@@ -58,6 +74,12 @@
   top: -50px;
 }
 
+.filter {
+  margin-top: 20px;
+  position: fixed;
+  z-index:1;
+  background-color: rgba(255,255,255, 0.98);
+}
 .filter-tools {
   height: 200px;
   padding: 10px;
@@ -70,15 +92,10 @@
 
 .col-md-5.google-map {
   position: fixed;
+  margin-top: 50px;
   height: 500px;
   padding: 0px;
 }
-
-//.google-map {
-//  height: 500px;
-//  padding: 0px;
-//  float: left;
-//}
 
 .item-view-price {
   background: rgba(54, 25, 25, .8);
@@ -132,6 +149,13 @@
   padding-right: 20px;
 }
 
+.listings.col-md-7.col-md-offset-5 {
+  margin-top: 50px;
+}
+
+.jumbotron {
+  margin-top: 50px;
+} 
 
 .jumbotron.listing {
   margin-bottom: 0px;
@@ -197,6 +221,10 @@
   padding-top: 10px;
 }
 
+.orange-hover-border:hover {
+  border: 2px solid rgba(253, 95, 0, 1);
+};
+
 .slide-wrapper {
   display: inline-block;
   margin-left: 225px;
@@ -205,8 +233,6 @@
 .span2{
   width: 90px;
 }
-
-
 
 .splash-header {
   position: relative;
@@ -238,8 +264,15 @@
   text-align: center;
 }
 
+.navbar-default .navbar-nav > li > a.customized {
+    color: rgba(253, 95, 0, 1);
+    font-size: 16px;
+}
 
+.navbar-default .navbar-nav > .active > a.customized:hover {
+    color: rgba(253, 95, 0, 1);
+    background-color: rgba(255, 255, 0, 0.4);
+}
 
-
-
+//css for navbar customization
 

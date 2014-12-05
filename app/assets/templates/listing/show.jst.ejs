@@ -59,7 +59,7 @@
              </div>
           <% } else { %>
              <div class="details-panel-item">
-               <img src="assets/happy-icon.gif" height="60px" width="60px" style='text-align:center'>
+               <img src="assets/happy-icon.gif" height="60px" width="60px" >
              <div>Not Mad/Evil</div>
              </div>
           <% } %>
@@ -68,22 +68,26 @@
    </div>
    
    <div class="col-xs-3 booking-container">
-   <div class="booking-subcontainer">
+   <div class="booking-subcontainer" style="margin-top:4px">
      Check-in
      <div class="input-append date">
-       <input type="text" class="span2"><span class="add-on"></span>
+       <input type="text" 
+              class="span2" 
+              style="margin-top:4px"><span class="add-on"></span>
      </div>
    </div>
-   <div class="booking-subcontainer">
+   <div class="booking-subcontainer" style="margin-top:4px">
      Check-out
      <div class="input-append date">
-       <input type="text" class="span2"><span class="add-on"></span>
+       <input type="text" 
+              class="span2" 
+              style="margin-top:4px"><span class="add-on"></span>
      </div>
    </div>
-   <div class="booking-subcontainer">
+   <div class="booking-subcontainer" style="margin-top:4px">
      Guests
      <div id="guest-number-selector">
-       <select id='num-guests'>
+       <select id='num-guests' class='form-control'>
          <option value="1">1</option>
          <option value="2">2</option>
          <option value="3">3</option>
@@ -92,7 +96,7 @@
        </select>
      </div>
    </div>
-   <button class='btn btn-primary book-it-btn'>Create Reservation</button>
+   <a href="https://www.linkedin.com/in/jeffcaves"><button class='btn btn-primary btn-custom' style="margin-left:30px;margin-top:10px">Create Reservation</button></a>
   </div> 
 </div>
 
