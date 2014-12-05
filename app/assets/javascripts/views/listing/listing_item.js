@@ -1,9 +1,9 @@
 SciFairbnb.Views.ListingItem = Backbone.View.extend({
   template: JST['listing/item'],
   
-  events: {
-    click: "handleListItemClick"
-  },
+  // events: {
+  //   'click': "handleListItemClick"
+  // },
   
   render: function(){
     var content = this.template({ listing: this.model })
@@ -12,8 +12,7 @@ SciFairbnb.Views.ListingItem = Backbone.View.extend({
   },
   
   handleListItemClick: function(event){
-    console.log("list item clicked");
-    showUrl = '#listings/' + this.model.id;
+    var showUrl = '#listings/' + this.model.id;
     Backbone.history.navigate(showUrl, {trigger: true});
   }
   

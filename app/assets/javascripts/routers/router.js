@@ -21,6 +21,7 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
   },
 
   index: function () {
+
     SciFairbnb.Collections.listings.fetch();
     var view = new SciFairbnb.Views.ListingsIndex({ 
       collection: SciFairbnb.Collections.listings 

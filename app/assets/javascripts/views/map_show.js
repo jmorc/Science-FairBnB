@@ -1,7 +1,7 @@
 SciFairbnb.Views.MapShow = Backbone.View.extend({
   mapOptions: {
-            center: new google.maps.LatLng(37.7833, -122.4167),
-            zoom: 12,
+            center: new google.maps.LatLng(37.5835, -122.3202),
+            zoom: 10,
             mapTypeId: google.maps.MapTypeId.TERRAIN,
             panControl: true,
             scaleControl: false,
@@ -36,6 +36,7 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
     
     google.maps.event.addListener(
         this.map, "bounds_changed", this.filterByLocation.bind(this));
+    setTimeout(function(){google.maps.event.trigger(this.map, "resize");}.bind(this), 0)
     
   },
   
@@ -59,7 +60,7 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
   },
   
   attributes: {
-    style: "height: 480px"
+    style: "height: 700px"
   },
   
   setMarkers: function(){

@@ -19,7 +19,7 @@ userRutherford = User.create({
 
 listingRutherford = Listing.create({
       title: "Rutherford Home",
-      address: "1300 McAllister, San Francisco, CA, 94115",
+      address: "3154 Bayshore Boulevard, Brisbane, CA 94005, USA",
       num_beds: 4,
       num_guests: 10,
       num_bedrooms: 3,
@@ -44,13 +44,13 @@ userAugustine = User.create({
 
 listingAugustine = Listing.create({
       title: "Tree of Souls",
-      address: "1425 McAllister, San Francisco, CA, 94115",
+      address: "401 Tennessee Glen Way, Mill Valley, CA 94941, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
       user: userAugustine,
-      image_url: '/assets/listings/avatar-item.png',
-      jumbo_image_url: '/assets/listings/jumbo-avatar.png',
+      image_url: '/assets/listings/avatar-item.jpg',
+      jumbo_image_url: '/assets/listings/jumbo-avatar.jpg',
       mass_spec: 'Y',
       centrifuge: 'Y',
       bunsen_burner: 'Y',
@@ -69,7 +69,7 @@ userVicanti = User.create({
 
 listingVicanti = Listing.create({
       title: "Chuck's Pad",
-      address: "1200 McAllister, San Francisco, CA, 94115",
+      address: "2320 8th Avenue, Oakland, CA 94606, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -95,7 +95,7 @@ userNiklason = User.create({
 
 listingNiklason = Listing.create({
       title: "The Niklason Home",
-      address: "300 McAllister, San Francisco, CA, 94115",
+      address: "2837 Pacheco Street, San Francisco, CA 94116, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -120,7 +120,7 @@ userCurie = User.create({
 
 listingCurie = Listing.create({
       title: "The Curie Home",
-      address: "600 McAllister, San Francisco, CA, 94115",
+      address: "3514 Scott Street, San Francisco, CA 94123, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -145,7 +145,7 @@ userCavendish = User.create({
 
 listingCavendish = Listing.create({
       title: "The Cavendish Ruins",
-      address: "700 McAllister, San Francisco, CA, 94115",
+      address: "730 Tennessee Street, San Francisco, CA 94107, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -170,7 +170,7 @@ userGalileo = User.create({
 
 listingGalileo = Listing.create({
       title: "The Galileo Home",
-      address: "700 McAllister, San Francisco, CA, 94115",
+      address: "1567 Randy Street, San Leandro, CA 94579, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -195,7 +195,7 @@ userGoodall = User.create({
 
 listingGoodall = Listing.create({
       title: "Camp Goodall",
-      address: "500 McAllister, San Francisco, CA, 94115",
+      address: "1414 Washington Boulevard, San Francisco, CA 94129, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -247,7 +247,7 @@ userEvil = User.create({
 
 listingEvil = Listing.create({
       title: "Evil Lair",
-      address: "1425 McAllister, San Francisco, CA, 94115",
+      address: "138 Cervantes Boulevard, San Francisco, CA 94123, US",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -272,13 +272,13 @@ userDog = User.create({
 
 listingDog = Listing.create({
       title: "Dog House",
-      address: "1420 McAllister, San Francisco, CA, 94115",
+      address: "635 Catamaran Street, Foster City, CA 94404, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
       user: userDog,
-      image_url: '/assets/listings/evil-dog-item.png',
-      jumbo_image_url: '/assets/listings/evil-dog-jumbo.png',
+      image_url: '/assets/listings/evil-dog-item.jpg',
+      jumbo_image_url: '/assets/listings/evil-dog-jumbo.jpg',
       mass_spec: 'Y',
       centrifuge: 'Y',
       bunsen_burner: 'Y',
@@ -297,7 +297,7 @@ userStrangelove = User.create({
 
 listingStrangelove = Listing.create({
       title: "War Room",
-      address: "1427 McAllister, San Francisco, CA, 94115",
+      address: "2015 Stierlin Court, Mountain View, CA 94043, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -349,7 +349,7 @@ userFrankenstein = User.create({
 
 listingFrankenstein = Listing.create({
       title: "Castle Frankenstein",
-      address: "312 McAllister, San Francisco, CA, 94115",
+      address: "1101 Welch Road, Palo Alto, CA 94304, USA",
       num_beds: 1,
       num_guests: 2,
       num_bedrooms: 0,
@@ -360,7 +360,7 @@ listingFrankenstein = Listing.create({
       centrifuge: 'Y',
       bunsen_burner: 'Y',
       evil: 'Mad',
-      price: 979
+      price: 679
 })
 
 userBunsen = User.create({
@@ -380,7 +380,7 @@ listingBunsen = Listing.create({
       num_bedrooms: 0,
       user: userBunsen,
       image_url: '/assets/listings/bunsen-item.png',
-      jumbo_image_url: '/assets/listings/bunsen-jumbo.png',
+      jumbo_image_url: '/assets/listings/bunsen-jumbo.jpg',
       mass_spec: 'Y',
       centrifuge: 'Y',
       bunsen_burner: 'Y',

@@ -5,7 +5,7 @@
   <link rel="shortcut icon" href="assets/favicon.ico" />
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   
   <%= csrf_meta_tags %>
 </head>
@@ -22,7 +22,9 @@
           <span class="icon-bar"></span>
         </button>
         <div class="navbar-brand" style="position:relative;top:-15px">
+          <a href="#">
          <img src="/assets/logo.png" style="height:50px;width:250px">
+       </a>
         </div>
       </div>
 

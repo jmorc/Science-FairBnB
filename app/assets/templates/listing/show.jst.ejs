@@ -39,16 +39,30 @@
       
       <div class="details-panel">
         <div class="details-panel-item">
-          Guests: <%= listing.escape("num_guests")%>
+          <img src="assets/guests-icon.png" height="60px" width="60px">
+          <div>Guests: <%= listing.escape("num_guests")%></div>
         </div>
         <div class="details-panel-item">
-          Beds: <%= listing.escape("num_beds")%>
+          <img src="assets/bed-icon.png" height="60px" width="60px">
+          <div>Beds: <%= listing.escape("num_beds")%></div>
         </div>
-        
-        <% if (listing.get("evil") === 'Y') { %>
-          <div class="details-panel-item">Evil</div>
-        <% } else { %>
-          <div class="details-panel-item">Not Evil</div>
+        <% if (user) { %>
+          <% if (user.disposition === 'Evil') { %>
+            <div class="details-panel-item">
+              <img src="assets/evil-icon.png" height="60px" width="60px">
+            <div>Evil</div>
+            </div>
+          <% } else if (user.disposition === 'Mad') { %>
+             <div class="details-panel-item">
+               <img src="assets/crazy-icon.jpeg" height="60px" width="60px">
+             <div>Mad</div>
+             </div>
+          <% } else { %>
+             <div class="details-panel-item">
+               <img src="assets/happy-icon.gif" height="60px" width="60px" style='text-align:center'>
+             <div>Not Mad/Evil</div>
+             </div>
+          <% } %>
         <% } %>
       </div>      
    </div>
@@ -82,10 +96,5 @@
   </div> 
 </div>
 
-<div class='row'>
-  <div class="description col-xs-6 col-xs-offset-2">
-  Description:
-  </div>
-</div>
 
 

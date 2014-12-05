@@ -1,15 +1,23 @@
-<div class="listing col-xs-3">
+<a href="#/listings/<%= listing.id %>">
+<div class="item-view-listing">
+  
+  <div class="item-view-profile-pic">
+    <img src="<%=listing.get("user").image_url%>" 
+         alt="Profile Pic" 
+         class="img-circle user-img">
+  </div>
   
   <div class="item-view-image">
     <img src="<%=listing.escape("image_url")%>"    
-         style="width:215px;height:200px">
+         style="width:215px;height:200px" class="img-rounded">
     <div class="item-view-price">
       $<%= listing.escape("price")%>
     </div>
   </div>
   
-  <h5><%= listing.escape("title")%></h5>
-  Guests: <%=listing.escape("num_guests")%> 
-  Beds: <%=listing.escape("num_beds")%> 
+  <div class="item-view-details">
+    <h5><%= listing.escape("title")%></h5>
+    Guests: <%=listing.escape("num_guests")%> 
+  <div>
 </div>
-
+</a>
