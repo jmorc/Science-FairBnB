@@ -17,7 +17,6 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
   },
   
   attachSlider: function(){
-     // this.sliderOptions
     this.$('#price-slider').slider();
     this.$('.slider').on('slideStop', this.handleSlider.bind(this));
   
@@ -39,28 +38,7 @@ SciFairbnb.Views.FilterShow = Backbone.View.extend({
       if (requestedMentalState === "Any") { return true }
       
       return requestedMentalState === listing.get("user").disposition 
-      // var returnMadnessFilter = function(response) {
-//         console.log("requestedMentalState is: " + requestedMentalState)
-//         console.log("userDisposition is: " + response.user.disposition)
-//
-//         if (response.user.disposition === requestedMentalState) {
-//           return true;
-//         } else {
-//           return false;
-//         }
-//       };
-//
-//       var ajaxOptions = {
-//         url: 'api/listings/' + listing.id,
-//         dataType: 'json',
-//         success: returnMadnessFilter
-//       };
-//
-//       $.ajax(ajaxOptions);
     }
-    
-    
-      
     SciFairbnb.Collections.filteredListings.updateFiltered();
   },
   
