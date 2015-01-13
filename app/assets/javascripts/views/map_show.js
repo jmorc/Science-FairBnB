@@ -11,6 +11,14 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
     
   addMarker: function(listing){
     var position = new google.maps.LatLng(listing.get("latitude"), listing.get("longitude"));
+    var title = listing.get('title');
+    var imageContent = "<img src=" + listing.escape("image_url") 
+      + " style='width:160px;height:150px' class='img-rounded'>";
+    var showLink = "<div><a href='#/listings/" + listing.id + "'>" + title + "</a></div>";
+    
+    var infowindow = new google.maps.InfoWindow({
+        content: imageContent  + showLink
+      });
     
     var icon_image = {
         url: 'assets/map_icon.png',
@@ -24,6 +32,11 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
       map: this.map,
       icon: icon_image
     })
+      
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(marker.get('map'), marker);
+      });
+      
     this.mapMarkers.push(marker);
   },
   
