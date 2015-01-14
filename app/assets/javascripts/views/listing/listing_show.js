@@ -8,7 +8,6 @@ SciFairbnb.Views.ListingShow = Backbone.View.extend({
   
   attachDatePickers: function(){
     this.$('.input-append.date').datepicker({});
-    // this.$('#check-out-date').datepicker();
   },
   
   render: function(){

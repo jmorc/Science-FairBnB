@@ -7,7 +7,7 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
             scaleControl: false,
             streetViewControl: true,
             overviewMapControl: true
-          },
+      },
     
   addMarker: function(listing){
     var position = new google.maps.LatLng(listing.get("latitude"), listing.get("longitude"));
@@ -38,6 +38,7 @@ SciFairbnb.Views.MapShow = Backbone.View.extend({
       });
       
     this.mapMarkers.push(marker);
+    listing.marker = marker;
   },
   
   clearMarkers: function(){
