@@ -31,8 +31,8 @@ SciFairbnb.Routers.Router = Backbone.Router.extend({
 
   new: function () {
     var listing = new SciFairbnb.Models.Listing();
-    listing.set('title', ''); // this is wrong
-    listing.set('body', '');  // this is wrong
+    listing.set('title', ''); 
+    listing.set('body', '');  
     
     var view = new SciFairbnb.Views.ListingForm({ 
       model: listing
