@@ -12,7 +12,7 @@ Visit [www.sciencefairbnb.com](http://www.sciencefairbnb.com "Go to ScienceFairB
 
 **3. Filtering the Listings** is required display the desired Listings, depending on the user's desired price range, location on the google map, and the mental state of the host scientist (Regular, Evil, or Mad). Listings are filtered using `filterByPrice`, `filterByLocation`, or `filterByMentalState`.  These functions take user input to create specific filtering functions (`price`, `location`, or `mentalState`). Every time the user changes a filtering input, the updated `price`, `location`, or `mentalState` functions are called in sequence.  Consequently, the listings are filtered by all criteria.
 
-**3. Data Serialization.**  When the data for a listing is retrieved from the back end, data on the associated user is also required.  This is achieved with JBuilder, using the partial `_listing.json.jbuilder`:
+**4. Data Serialization.**  When the data for a listing is retrieved from the back end, data on the associated user is also required.  This is achieved with JBuilder, using the partial `_listing.json.jbuilder`:
 
 ```ruby
  json.extract! listing, :title, :user_id, :address, :id, :num_beds, :num_guests,
